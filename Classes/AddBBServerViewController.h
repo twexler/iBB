@@ -1,0 +1,30 @@
+//
+//  AddBBServerViewController.h
+//  iBB
+//
+//  Created by Ted Wexler on 8/9/10.
+//  Copyright 2010. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "iBBAppDelegate.h"
+#import "BBServer.h"
+@protocol BBServerAddDelegate;
+
+@interface AddBBServerViewController : UIViewController {
+	IBOutlet UITextField *displayNameField;
+	IBOutlet UITextField *xmlURLField;
+	IBOutlet UITextField *ackURLField;
+    IBOutlet UIDatePicker *alertTimePeriodPicker;
+	id <BBServerAddDelegate> delegate;
+	iBBAppDelegate *appDelegate;
+}
+-(IBAction)save:(id)sender;
+-(IBAction)cancel:(id)sender;
+@property (nonatomic, retain) id <BBServerAddDelegate> delegate;
+@end
+
+@protocol BBServerAddDelegate <NSObject>
+@optional
+- (void)BBServerAddViewControllerFinished:(AddBBServerViewController *)addBBServerViewController didAddServer:(BBServer *)bbServer;
+@end

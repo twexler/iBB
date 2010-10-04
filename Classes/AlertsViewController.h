@@ -1,0 +1,24 @@
+//
+//  AlertsViewController.h
+//  iBB
+//
+//  Created by Ted Wexler on 8/8/10.
+//  Copyright 2010  . All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "iBBAppDelegate.h"
+#import "AddBBServerViewController.h"
+@interface AlertsViewController : UIViewController  <BBServerAddDelegate>{
+	NSDictionary *colorArray;
+	IBOutlet UITableView *tView;
+	IBOutlet UITableViewCell *tCell;
+	IBOutlet UIActivityIndicatorView *spinner;
+	IBOutlet UILabel *timePeriodLabel;
+	iBBAppDelegate *appDelegate;
+	NSArray *bbServers;
+}
+-(void)loadXML:(BBServer*)server;
+-(IBAction)addButtonPressed:(id)sender;
+-(IBAction)aboutButtonPressed:(id)sender;
+@end

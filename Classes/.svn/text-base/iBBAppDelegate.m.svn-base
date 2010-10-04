@@ -1,0 +1,174 @@
+//
+//  iBBAppDelegate.m
+//  iBB
+//
+//  Created by Ted Wexler on 8/6/10.
+//  Copyright   2010. All rights reserved.
+//
+
+#import "iBBAppDelegate.h"
+#import "RootViewController.h"
+#import "AckPageViewController.h"
+#import "AlertsViewController.h"
+#import "BBServerListViewController.h"
+#import "BBServer.h"
+#define DOCUMENTS_FOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+@implementation iBBAppDelegate
+
+@synthesize window;
+@synthesize navigationController;
+
+
+#pragma mark -
+#pragma mark Application lifecycle
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+    
+    // Override point for customization after application launch.
+	//checking to see if first run
+	//hacky way of setting up the array, because if the array is set directly from the file, it will never add objects properly.
+	//NSArray *arrayFromFile = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"serverlist.txt" ofType:nil]];
+	//bbServers = [NSMutableArray arrayWithArray:arrayFromFile];
+	//[arrayFromFile release];
+	//bbServers = [NSMutableArray arrayWithCapacity:0];
+	[self unSerializeAndPopulateBBServers];
+	[bbServers retain];
+	UIImage *ncTabImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"69-display.png" ofType:nil]];
+	UITabBarItem *ncItem = [[UITabBarItem alloc] initWithTitle:@"Status" image:ncTabImage tag:1];
+	self.navigationController.tabBarItem = ncItem;
+	//BBServerListViewController *bbSLVC = [[BBServerListViewController alloc] initWithNibName:@"BBServerListViewController" bundle:nil];
+	//BBServerListViewController *bbSLVC = [[BBServerListViewController alloc] init];
+	NSArray *controllers = [NSArray arrayWithObjects:[[AlertsViewController alloc] init],self.navigationController, [[AckPageViewController alloc] init], nil];
+	[tbController setViewControllers:controllers animated:NO];
+	[window addSubview:tbController.view];
+    [window makeKeyAndVisible];
+
+    return YES;
+}
+
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    /*
+     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+     */
+}
+
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    /*
+     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+     If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
+     */
+}
+
+
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    /*
+     Called as part of  transition from the background to the inactive state: here you can undo many of the changes made on entering the background.
+     */
+}
+
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    /*
+     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     */
+}
+
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    /*
+     Called when the application is about to terminate.
+     See also applicationDidEnterBackground:.
+     */
+	/*NSMutableData *data = [[NSMutableData alloc] init];
+	NSKeyedArchiver  *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+	for (BBServer *s in bbServers) {
+		[archiver encodeObject:s forKey:<#(NSString *)key#>
+	}*/
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url 
+{
+    if (!url) {  return NO; }
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasURL"];
+    [[NSUserDefaults standardUserDefaults] setURL:url forKey:@"url"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+	tbController.selectedIndex = 0;
+	tbController.selectedIndex = 2;
+    return YES;
+}
+
+-(void)addBBServer:(BBServer*)server {
+	NSLog(@"test array length is: %@", [server description]);
+	[bbServers addObject:server];
+	/*NSString *saveFilePath = [[NSString stringWithFormat:@"%@/serverlist.txt", DOCUMENTS_FOLDER] retain];
+	NSArray *arrayToFile = [NSArray arrayWithArray:bbServers];
+	BOOL okay = [arrayToFile writeToFile:saveFilePath
+				atomically:YES];
+	NSLog(@"the path is: %@ and was saved %@", saveFilePath, okay);*/
+	if ([self serializeBBServersAndSave:bbServers]) {
+		NSLog(@"great success!");
+	}
+	else {
+		NSLog(@"epic failure!");
+	}
+	[bbServers retain];
+}
+-(void)deleteBBServer:(int)index {
+	[bbServers removeObjectAtIndex:index];
+	if ([self serializeBBServersAndSave:bbServers]) {
+		NSLog(@"great success!");
+	}
+	else {
+		NSLog(@"epic failure!");
+	}
+
+	[bbServers retain];
+}
+-(NSMutableArray*)bbServers{
+	return bbServers;
+}
+#pragma mark -
+#pragma mark Memory management
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    /*
+     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+     */
+}
+
+-(BOOL)serializeBBServersAndSave:(NSMutableArray*)serverArray {
+	NSMutableArray *arrayToFile = [NSMutableArray arrayWithCapacity:[serverArray count]];
+	NSString *saveFilePath = [[NSString stringWithFormat:@"%@/serverlist.txt", DOCUMENTS_FOLDER] retain];
+	for (BBServer *s in serverArray) {
+		NSMutableData *data = [[NSMutableData alloc] init];
+		NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+		[archiver encodeObject:s forKey:@"key"];
+		[archiver finishEncoding];
+		[arrayToFile addObject:data];
+		[archiver release];
+		[data release];
+	}
+	return [arrayToFile writeToFile:saveFilePath atomically:YES];
+}
+-(void)unSerializeAndPopulateBBServers{
+	NSString *saveFilePath = [[NSString stringWithFormat:@"%@/serverlist.txt", DOCUMENTS_FOLDER] retain];
+	NSArray *arrayFromFile = [NSArray arrayWithContentsOfFile:saveFilePath];
+	bbServers = [NSMutableArray arrayWithCapacity:0];
+	for (NSData *d in arrayFromFile) {
+		NSKeyedUnarchiver *unarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:d];
+		BBServer *s = (BBServer*)[unarchiver decodeObjectForKey:@"key"];
+		[bbServers addObject:s];
+	}
+}
+- (void)dealloc {
+	[navigationController release];
+	[window release];
+	[super dealloc];
+}
+
+
+@end
+
