@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme>
    <BuildAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Debug copy">
    </BuildAction>
-   <TestAction>
+   <TestAction
+      failureAction = "0">
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB">
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      loadSymbolsForSpecifiedModules = "NO"
+      displayScaleIsEnabled = "NO"
+      displayScale = "1.00">
       <BuildableProductRunnable>
          <BuildableProductReference
             BuildableProductIdentifier = "iBB.app">

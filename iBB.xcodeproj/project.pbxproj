@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,7 @@
 		B614F745120CB62F000B3314 /* ServiceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B614F744120CB62F000B3314 /* ServiceItem.m */; };
 		B614F9F1120CE785000B3314 /* ServerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B614F9EF120CE785000B3314 /* ServerDetailViewController.m */; };
 		B614F9F2120CE785000B3314 /* ServerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B614F9F0120CE785000B3314 /* ServerDetailViewController.xib */; };
+		B62EE6AD125AACE5005D91A0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B62EE6AC125AACE5005D91A0 /* QuartzCore.framework */; };
 		B643945B1224596D00E14F81 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B64394591224596D00E14F81 /* WebViewViewController.m */; };
 		B643945C1224596D00E14F81 /* WebViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B643945A1224596D00E14F81 /* WebViewViewController.xib */; };
 		B651B1071210A2DF009E1726 /* 117-todo.png in Resources */ = {isa = PBXBuildFile; fileRef = B651B1061210A2DF009E1726 /* 117-todo.png */; };
@@ -50,9 +51,11 @@
 		B6B3F20E120E24A70034DF2E /* AckPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B3F20C120E24A70034DF2E /* AckPageViewController.m */; };
 		B6B3F20F120E24A70034DF2E /* AckPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B3F20D120E24A70034DF2E /* AckPageViewController.xib */; };
 		B6B3F281120E2F840034DF2E /* 69-display.png in Resources */ = {isa = PBXBuildFile; fileRef = B6B3F280120E2F840034DF2E /* 69-display.png */; };
+		B6C7E807125AD1790047F3EF /* NSDate+HumanInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7E806125AD1790047F3EF /* NSDate+HumanInterval.m */; };
 		B6D5F33F125A36B2007ADEBA /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D5F33D125A36B2007ADEBA /* AboutViewController.m */; };
 		B6D5F340125A36B2007ADEBA /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D5F33E125A36B2007ADEBA /* AboutViewController.xib */; };
 		B6D5F342125A36C6007ADEBA /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = B6D5F341125A36C6007ADEBA /* license.txt */; };
+		B6D67F95125BA029004A8E8D /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B6D67F94125BA029004A8E8D /* arrow.png */; };
 		B6FEA971120CF5EA002BCC4F /* AccDisclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = B6FEA970120CF5EA002BCC4F /* AccDisclosure.png */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +103,7 @@
 		B614F9EE120CE785000B3314 /* ServerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerDetailViewController.h; sourceTree = "<group>"; };
 		B614F9EF120CE785000B3314 /* ServerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerDetailViewController.m; sourceTree = "<group>"; };
 		B614F9F0120CE785000B3314 /* ServerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ServerDetailViewController.xib; path = Classes/ServerDetailViewController.xib; sourceTree = "<group>"; };
+		B62EE6AC125AACE5005D91A0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B634EF201215EABA002D269D /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		B64394581224596D00E14F81 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
 		B64394591224596D00E14F81 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
@@ -128,10 +132,13 @@
 		B6B3F20C120E24A70034DF2E /* AckPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AckPageViewController.m; sourceTree = "<group>"; };
 		B6B3F20D120E24A70034DF2E /* AckPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AckPageViewController.xib; path = Classes/AckPageViewController.xib; sourceTree = "<group>"; };
 		B6B3F280120E2F840034DF2E /* 69-display.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "69-display.png"; sourceTree = "<group>"; };
+		B6C7E805125AD1790047F3EF /* NSDate+HumanInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+HumanInterval.h"; sourceTree = "<group>"; };
+		B6C7E806125AD1790047F3EF /* NSDate+HumanInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HumanInterval.m"; sourceTree = "<group>"; };
 		B6D5F33C125A36B2007ADEBA /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		B6D5F33D125A36B2007ADEBA /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B6D5F33E125A36B2007ADEBA /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutViewController.xib; path = Classes/AboutViewController.xib; sourceTree = "<group>"; };
 		B6D5F341125A36C6007ADEBA /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
+		B6D67F94125BA029004A8E8D /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		B6FEA970120CF5EA002BCC4F /* AccDisclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AccDisclosure.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +150,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				B62EE6AD125AACE5005D91A0 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +160,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B6C7E7EA125AD0F70047F3EF /* DateFormatter */,
 				B66AB5D81210E80400CA6C64 /* AddBBServerViewController.h */,
 				B66AB5D91210E80400CA6C64 /* AddBBServerViewController.m */,
 				B614F6AE120CA2C4000B3314 /* TouchXML */,
@@ -241,6 +250,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+				B62EE6AC125AACE5005D91A0 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,6 +312,7 @@
 		B614F979120CDDC6000B3314 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B6D67F94125BA029004A8E8D /* arrow.png */,
 				B651B1081210A333009E1726 /* 59-flag.png */,
 				B651B1061210A2DF009E1726 /* 117-todo.png */,
 				B68BA734120E391000010E8A /* Bigbrother.png */,
@@ -310,6 +321,15 @@
 				B6FEA970120CF5EA002BCC4F /* AccDisclosure.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		B6C7E7EA125AD0F70047F3EF /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				B6C7E805125AD1790047F3EF /* NSDate+HumanInterval.h */,
+				B6C7E806125AD1790047F3EF /* NSDate+HumanInterval.m */,
+			);
+			name = DateFormatter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,7 +358,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iBB" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -381,6 +401,7 @@
 				B643945C1224596D00E14F81 /* WebViewViewController.xib in Resources */,
 				B6D5F340125A36B2007ADEBA /* AboutViewController.xib in Resources */,
 				B6D5F342125A36C6007ADEBA /* license.txt in Resources */,
+				B6D67F95125BA029004A8E8D /* arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +437,7 @@
 				B6914A1D1212048D0087E4CF /* BBServerListViewController.m in Sources */,
 				B643945B1224596D00E14F81 /* WebViewViewController.m in Sources */,
 				B6D5F33F125A36B2007ADEBA /* AboutViewController.m in Sources */,
+				B6C7E807125AD1790047F3EF /* NSDate+HumanInterval.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "~/dev/iPhone/iBB/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -434,6 +457,8 @@
 				GCC_PREFIX_HEADER = iBB_Prefix.pch;
 				INFOPLIST_FILE = "iBB-Info.plist";
 				PRODUCT_NAME = iBB;
+				SDKROOT = iphoneos4.1;
+				VALID_ARCHS = "armv7 i386 armv6";
 			};
 			name = Debug;
 		};
@@ -441,49 +466,99 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = "~/dev/iPhone/iBB/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iBB_Prefix.pch;
 				INFOPLIST_FILE = "iBB-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = iBB;
+				SDKROOT = iphoneos4.1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 i386 armv6";
 			};
 			name = Release;
 		};
-		C01FCF4F08A954540054247B /* Debug */ = {
+		B6E08854125AF5D8003155A0 /* Debug copy */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DDEBUG=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos4.1;
+				VALID_ARCHS = "";
+			};
+			name = "Debug copy";
+		};
+		B6E08855125AF5D8003155A0 /* Debug copy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "~/dev/iPhone/iBB/Entitlements.plist";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iBB_Prefix.pch;
+				INFOPLIST_FILE = "iBB-Info.plist";
+				PRODUCT_NAME = iBB;
+				SDKROOT = iphoneos4.1;
+				VALID_ARCHS = "armv7 i386 armv6";
+			};
+			name = "Debug copy";
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				OTHER_CFLAGS = "-DDEBUG=1";
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "";
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos4.1;
+				VALID_ARCHS = "";
 			};
 			name = Release;
 		};
@@ -494,6 +569,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
+				B6E08855125AF5D8003155A0 /* Debug copy */,
 				1D6058950D05DD3E006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -503,6 +579,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
+				B6E08854125AF5D8003155A0 /* Debug copy */,
 				C01FCF5008A954540054247B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
